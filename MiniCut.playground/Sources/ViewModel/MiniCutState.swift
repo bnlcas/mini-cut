@@ -48,7 +48,9 @@ final class MiniCutState {
     var timelineOffsetDidChange = ListenerList<Double>()
     var isPlayingDidChange = ListenerList<Bool>()
     
-    init() {}
+    init() {
+        self.timeline.tracks.append(Track(name: "Track \(self.timeline.tracks.count + 1)"))
+    }
     
     /// Cuts the currently selected clip.
     func cut() {
